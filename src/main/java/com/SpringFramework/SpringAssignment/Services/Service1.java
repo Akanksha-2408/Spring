@@ -3,9 +3,10 @@ package com.SpringFramework.SpringAssignment.Services;
 import com.SpringFramework.SpringAssignment.Interface.BeanInterface;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
+//@RefreshScope
 @Component("singletonBean")
 public class Service1 implements BeanInterface {
 

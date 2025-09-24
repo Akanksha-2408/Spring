@@ -2,7 +2,6 @@ package com.SpringFramework.SpringAssignment.Controller;
 
 import com.SpringFramework.SpringAssignment.Interface.BeanInterface;
 import com.SpringFramework.SpringAssignment.Services.Service2;
-import com.SpringFramework.SpringAssignment.Services.Service3;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MainController {
+
     @Autowired
     @Qualifier("singletonBean")
     BeanInterface singletonBean;

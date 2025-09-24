@@ -3,10 +3,12 @@ package com.SpringFramework.SpringAssignment.Services;
 import com.SpringFramework.SpringAssignment.Interface.BeanInterface;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+@RefreshScope
 @Component("prototypeBean")
 //@Primary
 @Scope("prototype")
