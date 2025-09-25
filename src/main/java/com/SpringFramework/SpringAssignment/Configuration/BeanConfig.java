@@ -1,21 +1,16 @@
 package com.SpringFramework.SpringAssignment.Configuration;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Service;
 
-
-// 2nd way to load and use bean.properies instead of application.properties
-
-@Configuration
-@PropertySource("classpath:bean.properties")
+@RefreshScope
+@Service
 public class BeanConfig {
     @Value("${app.title}")
-    String title;
+    private String title;
 
-    @Bean
-    public SomeBean someBean() {
-        return new SomeBean(title);
+    public String getTitle() {
+        return title;
     }
 }

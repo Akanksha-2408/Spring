@@ -1,5 +1,6 @@
 package com.SpringFramework.SpringAssignment.Controller;
 
+import com.SpringFramework.SpringAssignment.Configuration.BeanConfig;
 import com.SpringFramework.SpringAssignment.Interface.BeanInterface;
 import com.SpringFramework.SpringAssignment.Services.Service2;
 import org.springframework.beans.factory.ObjectFactory;
@@ -28,6 +29,9 @@ public class MainController {
     @Qualifier("requestBean")
     BeanInterface requestBean;
 
+    @Autowired
+    BeanConfig beanConfig;
+
     @GetMapping("/singleton")
     public void checkSingleton() {
         System.out.println("Singleton bean created " + singletonBean.printHashCode());
@@ -44,4 +48,14 @@ public class MainController {
     public void checkrequest(){
         requestBean.printHashCode();
     }
+
+    public MainController(BeanConfig beanConfig) {
+        this.beanConfig = beanConfig;
+    }
+
+    @GetMapping("/title")
+    public String printTitle() {
+        return beanConfig.getTitle();
+    }
+
 }
